@@ -80,5 +80,10 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Lab Guide:
-    - Lab Overview: lab_overview.md
+      - Overview: lab_overview.md
+      - Step 1 - Simple Example deployment with NaC for Catalyst Center: simple_example_nac_catalyst_center.md
+      - Step 2 (Optional) - Simple Example deployment with native Terraform: simple_example_native_terraform.md
+      - Step 3 (Optional) - Simple Example deployment with REST API: simple_example_rest_api.md
+      - Step 4 - Review Approach Comparison: review_approach_comparison.md
+      - Step 5 (stretch) - Deploy a complete SD-Access Fabric: deploy_complete_sd_access_fabric.md
   - Topology and Device Credentials: lab_topology.md
