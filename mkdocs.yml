@@ -79,5 +79,5 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Lab Access: lab_access.md
   - Lab Guide: lab_guide.md
+  - Topology and Device Access: lab_guide.md
