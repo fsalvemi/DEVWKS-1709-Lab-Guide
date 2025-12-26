@@ -8,3 +8,11 @@ Once the VPN session is established use the RDP client on your laptop to RDP to 
 
 ![Lab Topology](images/lab_topology/Lab_Topology_20251222_1604.jpg)
 
+## Device Credentials
+
+| Device | Management Address | Protocol | Username | Password |
+|--------|-------------------|----------|----------|----------|
+| Catalyst Center | https://198.18.129.100 | HTTPS | admin | C1sco12345 |
+| Jump Host | 198.18.133.20 | RDP | admin | C1sco12345 |
+| Catalyst Switches | see Catalyst Center Inventory | SSH | cisco | cisco |
+
