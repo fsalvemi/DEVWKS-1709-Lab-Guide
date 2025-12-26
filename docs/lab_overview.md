@@ -1,55 +1,40 @@
 # Lab Overview
 
-## Introduction
+This is a demonstration repository for **DEVWKS-1709 Lab** and includes four repositories that cover two scenarios and three learning objectives
 
-Welcome to DEVWKS-1709: Automate Software Defined Access Fabric Deployment Leveraging Network as Code Framework.
+| Scenario | Repository | Approach | Learning Objective | 
+|----------|--------------|---------|---------|
+| Simple Example| nac-catalystcenter-simple-example | Network as Code for Catalyst Center | Familiarize with Network as Code for Catalyst Center |
+| Simple Example| native-terraform-simple-example | Native Terraform | Comparing approach complexity |
+| Simple Example| native-api-simple-example | Native Catalyst Center API | Comparing approach complexity |
+| Comprehensive Example | nac-catalystcenter-comprehensive-example | Network as Code for Catalyst Center | Demonstrate full SDA Fabric Deployment |
 
-## What You Will Learn
+The first three repositories demonstrates three approaches to achieve the **identical outcome**: deploying a complete site hierarchy with IP pools and reservations to Cisco Catalyst Center.
 
-In this hands-on lab, you will:
+The first example allows to familiarize with the Network as Code for Catalyst Center solution.
+The second and third examples try to achieve the same result using Native Terraform and Native Catalyst Center API. This allows to compare the complexity, maintainability, and ease of use of the three approaches.
 
-- Understand Infrastructure as Code principles for network automation
-- Learn how to use Network as Code (NAC) framework
-- Automate Software Defined Access (SDA) fabric deployment
-- Configure and manage Cisco Catalyst Center using code
-- Apply GitOps workflows to network infrastructure
+The forth repository includes comprehensive example that deploys a full SD-Access fabric using the Network as Code for Catalyst Center approach.
+This demonstrates how Network as Code for Catalyst Center can be used to deploy a full SD-Access fabric
 
-## Lab Duration
+## Suggested Learning Path
 
-- **Estimated Time**: 90 minutes
-- **Difficulty Level**: Intermediate
+### Step 1: Use the Simple Example deployment scenario to familiarize with Network as Code for Catalyst Center
 
-## Prerequisites
+Follow the lab guide for the [nac-catalystcenter approach](./simple_example_nac_catalyst_center.md)
 
-- Basic understanding of networking concepts
-- Familiarity with Python programming
-- Knowledge of Git version control
-- Understanding of API concepts
+### Step 2 (Optional): Try to achieve the same results using the Terraform Native API approach
 
-## Lab Environment
+Follow the lab guide for the [Terraform Native API approach](./simple_example_native_terraform.md) and compare the complexity of the code required to achieve the same result
 
-This lab uses:
+### Step 3 (Optional): Try to achieve the same results using the Catalyst Center Native API approach
 
-- Cisco Catalyst Center
-- Software Defined Access fabric
-- Network as Code framework
-- Git repository for configuration management
+Examine the complexity of the [native API example](./simple_example_rest_api.md) and compare the complexity of the code required to achieve the same result
 
-## Lab Structure
+### Step 4: Review Approach Comparison
 
-The lab is divided into the following sections:
+Review the [Approach Comparison](./review_approach_comparison.md) to understand the complexity differences between the three approaches used in the Simple Example scenario.
 
-1. **Environment Setup** - Access and verify your lab environment
-2. **Introduction to NAC** - Understand the Network as Code framework
-3. **Configuration Management** - Use code to define network infrastructure
-4. **SDA Deployment** - Automate fabric deployment
-5. **Validation** - Verify and test your deployment
+### Step 5 (Stretch): Deploy a complete SD-Access Fabric
 
-## Getting Started
-
-Click on the navigation tabs above to access different sections of the lab:
-
-- **Lab Topology** - View the network topology diagram
-- **Device Credentials** - Access login information for lab devices
-
-Let's begin your journey into Network as Code!
+Follow the lab guide for the [nac-catalystcenter-comprehensive-example](./deploy_complete_sd_access_fabric.md)
