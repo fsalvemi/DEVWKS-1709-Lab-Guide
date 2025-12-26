@@ -81,6 +81,7 @@ nav:
   - Home: index.md
   - Lab Guide:
       - Overview: lab_overview.md
+      - Lab Access: lab_access.md
       - Step 1 - Simple Example deployment with NaC for Catalyst Center: simple_example_nac_catalyst_center.md
       - Step 2 (Optional) - Simple Example deployment with native Terraform: simple_example_native_terraform.md
       - Step 3 (Optional) - Simple Example deployment with REST API: simple_example_rest_api.md
