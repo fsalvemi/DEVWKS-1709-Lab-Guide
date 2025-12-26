@@ -19,6 +19,10 @@ This demonstrates how Network as Code for Catalyst Center can be used to deploy 
 
 # Suggested Learning Path
 
+- Access the Lab in dCloud
+
+Follow the instructions for [Lab Access](./lab_access.md)
+
 - Step 1: Use the Simple Example deployment scenario to familiarize with Network as Code for Catalyst Center
 
 Follow the lab guide for the [nac-catalystcenter approach](./simple_example_nac_catalyst_center.md)
