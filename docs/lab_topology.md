@@ -1,61 +1,10 @@
 # Lab Topology
 
-## Network Diagram
+The lab environment includes a Catalyst Center and a Fabric Site.
+You will use the Cisco Secure Client on your laptop to establish a VPN session with the dCloud VPN gateway for your assigned POD.
 
-[Add your topology diagram here]
+Once the VPN session is established use the RDP client on your laptop to RDP to the Windows Jump host and execute the steps suggested in the lab guides.
 
-## Components
 
-### Cisco Catalyst Center
+![Lab Topology](images/lab_topology/Lab_Topology_20251222_1604.jpg)
 
-- **Role**: DNA Center for managing the SDA fabric
-- **Management IP**: [TBD]
-- **Version**: [TBD]
-
-### Fabric Devices
-
-#### Underlay Devices
-
-**Spine Switches**
-- Spine-1: [Details TBD]
-- Spine-2: [Details TBD]
-
-**Border Nodes**
-- Border-1: [Details TBD]
-- Border-2: [Details TBD]
-
-#### Overlay Devices
-
-**Edge Nodes**
-- Edge-1: [Details TBD]
-- Edge-2: [Details TBD]
-- Edge-3: [Details TBD]
-
-### Control Plane Nodes
-
-- Control Plane Node 1: [Details TBD]
-- Control Plane Node 2: [Details TBD]
-
-### Additional Components
-
-**External Connectivity**
-- Internet Gateway
-- External Services
-
-**Hosts/Endpoints**
-- Test endpoints in various VLANs
-
-## Network Segments
-
-| Segment | VLAN | Subnet | Purpose |
-|---------|------|--------|---------|
-| Management | [TBD] | [TBD] | Device management |
-| User Data | [TBD] | [TBD] | End user traffic |
-| Guest | [TBD] | [TBD] | Guest access |
-
-## Connectivity Requirements
-
-- All devices have management connectivity
-- Underlay uses IS-IS or OSPF
-- Overlay uses VXLAN EVPN
-- External connectivity through border nodes
