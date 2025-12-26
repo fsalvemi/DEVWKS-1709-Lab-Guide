@@ -4,7 +4,7 @@ The goal of this example is to demonstrates how to instantiate and SD-Access Fab
 
 ## Lab Access
 
-If not already done, follow the [Lab Access Guide](../LAB_ACCESS.md) to access the Lab and clone the repositories
+If not already done, follow the [Lab Access Guide](./lab_access.md) to access the Lab and clone the repositories
 
 ## 🎯 What This Example Does
 

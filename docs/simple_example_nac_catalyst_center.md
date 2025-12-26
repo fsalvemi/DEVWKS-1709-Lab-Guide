@@ -360,12 +360,9 @@ catalyst_center:
   parent_name: Global/Europe/Italy/Rome/Rome Office
 ```
 
-**After completing these modifications**, your `data/sites.nac.yaml` file should look like the reference file: [`reference_configs/final_config/sites.nac.yaml`](reference_configs/final_config/sites.nac.yaml) with the exception of the ip_pools_reservations that we will add in the next step
+**After completing these modifications**, your `data/sites.nac.yaml` file should include the Rome office hierarchy.
 
-Verify your changes:
-```bash
-diff -c data/sites.nac.yaml reference_configs/final_config/sites.nac.yaml
-```
+Verify your changes using a diff tool or by reviewing the file manually.
 
 **What We're Adding**:
 - **3 Area Levels**: Europe → Italy → Rome hierarchy
@@ -474,19 +471,9 @@ ip_pools_reservations:
     - ROM_CORP
 ```
 
-**After completing all IP pool modifications**, verify your files against the reference:
-- `data/ip_pools.nac.yaml` should match: [`reference_configs/final_config/ip_pools.nac.yaml`](reference_configs/final_config/ip_pools.nac.yaml)
-- `data/sites.nac.yaml` should match: [`reference_configs/final_config/sites.nac.yaml`](reference_configs/final_config/sites.nac.yaml)
+**After completing all IP pool modifications**, verify your files contain all the expected resources.
 
-Verify your changes to `ip_pools.nac.yaml`:
-```bash
-diff -c data/ip_pools.nac.yaml reference_configs/final_config/ip_pools.nac.yaml
-```
-
-Verify your changes to `sites.nac.yaml`:
-```bash
-diff -c data/sites.nac.yaml reference_configs/final_config/sites.nac.yaml
-```
+Review your changes manually to ensure all modifications were applied correctly.
 
 **What We're Adding**:
 - **1 Global IP Pool**: EU_CORP (10.205.0.0/16) for all European sites
