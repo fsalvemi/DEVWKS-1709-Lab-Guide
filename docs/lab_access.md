@@ -2,7 +2,7 @@
 
 ## Overview
 
-This lab is hosted in a cloud-based environment that provides you with access to Cisco Catalyst Center and network devices. You will connect to the lab environment using one of the methods described below.
+This lab is hosted in a Cisco dCloud environment that provides you with access to Cisco Catalyst Center and network devices. 
 
 ## Prerequisites
 
@@ -15,6 +15,7 @@ This lab is hosted in a cloud-based environment that provides you with access to
 ### Step 1: Reserve a POD and get VPN access Credentials
 
 Procedure:
+
 - Follow the eXpo link:  <link To Be Added>
 - Select a **Session** and click **Explore**
 - Enter your **email address**
