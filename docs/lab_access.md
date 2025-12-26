@@ -4,152 +4,65 @@
 
 This lab is hosted in a cloud-based environment that provides you with access to Cisco Catalyst Center and network devices. You will connect to the lab environment using one of the methods described below.
 
-## Access Methods
+## Prerequisites
 
-You have two primary options to access the lab environment:
+- dCloud eXpo session access
+- VPN client installed on your workstation
+- RDP (Remote Desktop Protocol) client
 
-### Option 1: Web-Based Access (Recommended)
+## Access Instructions
 
-The easiest way to access your lab is through the web-based interface provided in the dCloud portal. This method requires no additional software installation.
+### Step 1: Reserve a POD and get VPN access Credentials
 
-1. Navigate to your dCloud session
-2. Click on the **Workstation** or **Developer Workstation** to access the environment
-3. Use the built-in terminal and tools to complete the lab exercises
+Procedure:
+- Follow the eXpo link:  <link To Be Added>
+- Select a **Session** and click **Explore**
+- Enter your **email address**
+- Accept **terms and conditions**
+- Click **continue**
+- Select **Details** tab 
+- Select **Cisco Secure Client** tab
+- Reveal **Cisco Secure Client Credentials**
 
-**Advantages:**
-- No local software installation required
-- Works from any device with a web browser
-- Pre-configured environment ready to use
+![dCloud eXpo Login](images/lab_access/eXpo_login_short_20251217_1018.gif)
 
-### Option 2: VPN + RDP Access
+### Step 2: Connect to VPN
 
-For users who prefer working with native applications on their local machine, you can connect via VPN and use Remote Desktop Protocol (RDP) to access the lab workstation.
+Open Cisco Secure Client and use the Cisco Secure Client Credentials from the previous step to establish a VPN connection to your assigned session.
 
-!!! info "VPN Connection Details"
-    VPN connection details are provided in your dCloud session page under the **Session Details** section. Look for:
-    
-    - VPN Server Address
-    - VPN Username
-    - VPN Password
-    - VPN Type (typically Cisco AnyConnect)
+### Step 3: Connect to Windows Lab VM
 
-**Steps to Connect:**
+Once connected to the VPN, open an RDP (Remote Desktop Protocol) session to the Windows VM:
 
-1. **Download and Install VPN Client:**
-    - Download Cisco AnyConnect from the dCloud session page or [cisco.com](https://www.cisco.com)
-    - Install the client on your local machine
-    - Follow the platform-specific installation instructions
+- **IP Address**: 198.18.133.20
+- **Username**: admin
+- **Password**: C1sco12345
 
-2. **Connect to VPN:**
-    - Launch Cisco AnyConnect
-    - Enter the VPN server address from your dCloud session
-    - Authenticate with the provided credentials
-    - Wait for the connection to establish
+### Step 4: Open Ubuntu terminal from within WSL (Windows Subsystem for Linux).
 
-3. **Connect via RDP:**
-    - Once VPN is connected, use your RDP client:
-        - **Windows:** Built-in Remote Desktop Connection (mstsc.exe)
-        - **macOS:** Microsoft Remote Desktop from the App Store
-        - **Linux:** Remmina, FreeRDP, or similar
-    - Connect to the workstation IP address (see [Topology and Device Credentials](lab_topology.md) page)
-    - Enter the workstation credentials when prompted
+Search for the Ubuntu app:
 
-**Advantages:**
-- Use your preferred local tools and applications
-- Better performance for resource-intensive operations
-- Ability to work offline (once files are downloaded)
+![Launch the Ubuntu WSL machine](images/lab_access/Launch%20the%20Ubuntu%20WSL%20machine.png)
 
-## Lab Workstation Details
+Click on **Open** to Launch the Ubuntu WSL machine
 
-### Pre-installed Software
+### Step 5: Clone the DEVWKS-1709 repository
 
-Your lab workstation comes with the following tools pre-installed:
+After opening the Ubuntu terminal, clone the GitHub repository with the lab repos:
 
-- **Python 3.9+** - For running scripts and automation tools
-- **Git** - For version control and repository management
-- **Visual Studio Code** - Recommended IDE for lab exercises
-- **Terraform** - For infrastructure as code deployments
-- **Network as Code (NaC) CLI** - Cisco's NaC framework tools
-- **Postman** or **curl** - For API testing
-- **SSH Client** - For device access
-
-### Working Directory
-
-All lab files and exercises are located in the home directory under:
-
-```
-/home/developer/DEVWKS-1709/
+```bash
+git clone https://github.com/fsalvemi/DEVWKS-1709.git
 ```
 
-or on Windows:
+### Step 6: Open Visual Studio Code
 
+Change directory to the cloned folder 
+
+```bash
+cd DEVWKS-1709
 ```
-C:\Users\Developer\DEVWKS-1709\
+and launch Visual Studio Code
+
+```bash
+code .
 ```
-
-!!! tip "Best Practice"
-    Always work within the lab directory structure to ensure all paths and configurations work correctly.
-
-## Accessing Cisco Catalyst Center
-
-Cisco Catalyst Center is the network controller used throughout this lab. You will interact with it via:
-
-1. **Web GUI:** Access via browser at the URL provided in the [Topology](lab_topology.md) page
-2. **REST API:** Programmatic access for automation (covered in lab exercises)
-3. **NaC Framework:** High-level abstraction for deployment automation
-
-### Login Credentials
-
-See the [Topology and Device Credentials](lab_topology.md) page for:
-
-- Catalyst Center URL
-- Admin username and password
-- API credentials
-- Device access credentials
-
-## Troubleshooting Access Issues
-
-### Cannot Connect to VPN
-
-- Verify VPN credentials are correct
-- Check that your local firewall allows VPN connections
-- Ensure Cisco AnyConnect is up to date
-- Try disconnecting and reconnecting
-
-### Cannot Connect via RDP
-
-- Verify VPN connection is established
-- Confirm workstation IP address is correct
-- Check RDP port (default 3389) is not blocked
-- Verify workstation credentials
-
-### Web Interface Not Loading
-
-- Clear browser cache
-- Try a different browser (Chrome or Firefox recommended)
-- Check dCloud session is still active
-- Restart the session if necessary
-
-### Cannot Access Catalyst Center
-
-- Verify network connectivity to Catalyst Center IP
-- Check credentials match those in topology documentation
-- Ensure browser accepts self-signed certificates
-- Try accessing from the lab workstation directly
-
-## Getting Help
-
-If you encounter issues accessing the lab:
-
-1. Check the dCloud session status page
-2. Review the troubleshooting section above
-3. Contact your lab proctor or instructor
-4. Submit a support ticket through the dCloud portal
-
-## Next Steps
-
-Once you have successfully accessed the lab environment, proceed to:
-
-- **[Lab Overview](lab_overview.md)** - Understand the lab objectives and structure
-- **[Topology and Device Credentials](lab_topology.md)** - Review the lab topology
-- **[Step 1](simple_example_nac_catalyst_center.md)** - Begin your first lab exercise
