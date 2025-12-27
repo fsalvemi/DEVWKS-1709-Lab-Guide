@@ -9,6 +9,7 @@ If not already done, follow the [Lab Access Guide](./lab_access.md) to access th
 ## 🎯 What This Example Does
 
 Deploys a complete network infrastructure to Catalyst Center:
+
 - **5 Areas**: United States, Golden Hills Campus, Lakefront Tower, Oceanfront Mansion, Desert Oasis Branch
 - **4 Buildings**: Sunset Tower, Windy City Plaza, Art Deco Mansion, Desert Oasis Tower  
 - **6 Floors**: Multiple floors across different buildings
@@ -16,6 +17,17 @@ Deploys a complete network infrastructure to Catalyst Center:
 - **16 IP Pool Reservations**: 4 reservations per building (CORP, TECH, GUEST, BYOD)
 
 **Total Resources Created**: 35
+
+## Access the DEVWKS-1709/nac-catalystcenter-simple-example folder
+
+Access the cloned repository folder for this lab.
+
+You should have already launched visual studio code from the DEVWKS-1709 folder.
+
+You should now open a new terminal from code and access the nac-catalystcenter-simple-example folder
+
+![Access the cloned repository folder for this lab](./images/simple_example_nac_catalyst_center/simple_example_access_folder.gif)
+
 
 ## 📁 File Structure
 
@@ -55,27 +67,15 @@ This separation means you maintain only your network's desired state (YAML data)
 ### 1. main.tf file
 
 The `main.tf` file is the entry point for your Terraform deployment. It defines:
+
 - **Provider Configuration**: Which Terraform provider to use (Catalyst Center)
 - **Authentication**: How to connect to your Catalyst Center instance (URL, credentials)
 - **NAC Module**: References the Network-as-Code module for simplified configuration
 - **YAML Location**: Specifies where your configuration files are located (`data/` directory)
 
-#### 1.1 Edit the main.tf file
+#### 1.1 Inspect the main.tf file
 
-Edit `main.tf` to point to your Catalyst Center:
-
-```hcl
-module "catalyst_center" {
-  source  = "netascode/nac-catalystcenter/catalystcenter"
-  version = ">= 0.2.0"
-
-  catalystcenter_url      = "https://YOUR-CATALYST-CENTER-IP"
-  catalystcenter_username = "admin"
-  catalystcenter_password = "your-password"
-  
-  yaml_directories = ["data/"]
-}
-```
+The `main.tf` is already modified to point to your Catalyst Center:
 
 ### 2. Inspect Data Folder
 
@@ -104,7 +104,9 @@ This modular approach lets you split large configurations (e.g., separate files 
 The NAC module uses two YAML files to define the network infrastructure in a hierarchical, human-readable format.
 
 #### 3.1 About YAML
+
 YAML (YAML Ain't Markup Language) is a human-readable data serialization format commonly used for configuration files. Key syntax rules:
+
 - **Indentation Matters**: Use spaces (not tabs) - typically 2 spaces per level
 - **Key-Value Pairs**: Format is `key: value` with a space after the colon
 - **Lists**: Use a dash (`-`) followed by a space for list items
@@ -113,7 +115,9 @@ YAML (YAML Ain't Markup Language) is a human-readable data serialization format 
 - **Case Sensitive**: `name` and `Name` are different keys
 
 ### 3.2 Network-as-Code YAML Files
+
 Files with the `.nac.yaml` suffix leverage the **Network-as-Code Data Model JSON Schema** for validation and auto-completion. This provides:
+
 - **Error Checking**: Validates configuration against the data model before deployment
 - **IntelliSense**: IDE support for available options and attributes for each object
 - **Type Safety**: Ensures correct data types and required fields are present
@@ -248,6 +252,7 @@ terraform apply
 ```
 
 **Expected Result**: ✅ Success on first apply - all 35 resources created
+
 - 5 Areas (United States + 4 campus/branch areas)
 - 4 Buildings (Sunset Tower, Windy City Plaza, Art Deco Mansion, Desert Oasis Tower)
 - 6 Floors across the buildings
@@ -502,6 +507,7 @@ terraform apply
 **Expected Result**: ✅ 2 new resources added (1 global pool, 1 reservation)
 
 **Verify in Catalyst Center**:
+
 - Refresh your browser page in the Catalyst Center GUI
 - Navigate to **Design > Network Settings > IP Address Pools**
 - Verify the **EU_CORP** pool (10.205.0.0/16) appears in the list
@@ -522,6 +528,7 @@ terraform destroy  # Remove all 35 resources
 **Note**: Terraform will show you a plan of what will be destroyed and ask for confirmation before proceeding.
 
 **Verify in Catalyst Center**:
+
 - Refresh your browser page in the Catalyst Center GUI
 - Navigate to **Design > Network Hierarchy** to confirm no sites exist (only the default "Global" site should be present)
 - Navigate to **Design > Network Settings > IP Address Pools** to verify no IP pools are configured
