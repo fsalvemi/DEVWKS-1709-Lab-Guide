@@ -365,6 +365,7 @@ catalyst_center:
   parent_name: Global/Europe/Italy/Rome/Rome Office
 ```
 
+#### 7.2 Verify your changes against the reference configurations
 
 **After completing these modifications**, your `data/sites.nac.yaml` file should look like the reference file in the `nac-catalystcenter-simple-example/reference_configs/final_config` folder with the exception of the ip_pools_reservations that we will add in the next step
 
@@ -388,6 +389,8 @@ diff -c data/sites.nac.yaml reference_configs/final_config/sites.nac.yaml
 - No IP pool reservation yet - we'll add that in the next step
 - No dependencies to manage - NAC module handles ordering automatically
 
+#### 7.3 Deploy the Site Addition
+
 **Deploy the Site Addition**:
 
 Review the changes:
@@ -402,6 +405,8 @@ terraform apply
 
 **Expected Result**: ✅ 5 new resources added (3 areas, 1 building, 1 floor)
 
+#### 7.4 Verify in Catalyst Center
+
 **Verify in Catalyst Center**: 
 
 - Refresh your browser page in the Catalyst Center GUI
@@ -413,11 +418,11 @@ terraform apply
 
 Now add IP addressing for the Rome office. This requires changes to two files: creating a global IP pool in `ip_pools.nac.yaml` and referencing it in `sites.nac.yaml`.
 
-#### 7.1 Edit `data/ip_pools.nac.yaml`
+#### 8.1 Edit `data/ip_pools.nac.yaml`
 
 This file contains global IP pools and their reservations.
 
-##### 7.1.1 Add European IP Pool
+##### 8.1.1 Add European IP Pool
 
 **Current Context** - The `ip_pools` section contains US pools:
 ```yaml
@@ -450,11 +455,11 @@ catalyst_center:
       subnet: 10.205.1.0
 ```
 
-#### 7.2 Edit `data/sites.nac.yaml`
+#### 8.2 Edit `data/sites.nac.yaml`
 
 Update the Rome Office building to reference the IP pool reservation.
 
-##### 7.2.1 Add IP Pool Reservation to Building
+##### 8.2.1 Add IP Pool Reservation to Building
 
 **Current Context** - The Rome Office building (added in step 5):
 ```yaml
@@ -484,12 +489,14 @@ ip_pools_reservations:
     - ROM_CORP
 ```
 
+#### 8.3 Verify your files against the reference files
+
 **After completing all IP pool modifications**, verify your files against the reference files:
 
 - `data/ip_pools.nac.yaml` should match: `reference_configs/final_config/ip_pools.nac.yaml`
 - `data/sites.nac.yaml` should match: `reference_configs/final_config/sites.nac.yaml`
 
-Verify your changes reviewing the files or running the commandd below in terminal from `nac-catalystcenter-simple-example` folder:
+Verify your changes reviewing the files or running the command below in terminal from `nac-catalystcenter-simple-example` folder:
 
 Verify your changes to `ip_pools.nac.yaml`:
 ```bash
@@ -515,6 +522,8 @@ diff -c data/sites.nac.yaml reference_configs/final_config/sites.nac.yaml
 - DHCP and DNS settings are inherited from the parent global pool
 - NAC module automatically creates pool → reservation → site association in the correct order
 
+#### 8.4 Deploy the IP Pool Addition
+
 **Deploy the IP Pool Addition**:
 
 Review the changes:
@@ -528,6 +537,8 @@ terraform apply
 ```
 
 **Expected Result**: ✅ 2 new resources added (1 global pool, 1 reservation)
+
+#### 8.5 Verify in Catalyst Center
 
 **Verify in Catalyst Center**:
 
