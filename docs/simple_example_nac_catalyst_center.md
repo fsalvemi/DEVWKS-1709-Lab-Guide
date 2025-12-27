@@ -26,7 +26,7 @@ You should have already launched visual studio code from the DEVWKS-1709 folder.
 
 You should now open a new terminal from code and access the nac-catalystcenter-simple-example folder
 
-![Access the cloned repository folder for this lab](./images/simple_example_nac_catalyst_center/simple_example_access_folder.gif)
+![Access the cloned repository folder for this lab](./images/simple_example_nac_catalyst_center/simple_example_access_folder_v2.gif)
 
 
 ## 📁 File Structure
@@ -366,9 +366,9 @@ catalyst_center:
 ```
 
 
-**After completing these modifications**, your `data/sites.nac.yaml` file should look like the reference file in the nac-catalystcenter-simple-example/reference_configs/final_config folder with the exception of the ip_pools_reservations that we will add in the next step
+**After completing these modifications**, your `data/sites.nac.yaml` file should look like the reference file in the `nac-catalystcenter-simple-example/reference_configs/final_config` folder with the exception of the ip_pools_reservations that we will add in the next step
 
-Verify your changes reviewing the file or running the command below in terminal from nac-catalystcenter-simple-example folder:
+Verify your changes reviewing the file or running the command below in terminal from `nac-catalystcenter-simple-example` folder:
 
 ```bash
 diff -c data/sites.nac.yaml reference_configs/final_config/sites.nac.yaml
@@ -485,10 +485,11 @@ ip_pools_reservations:
 ```
 
 **After completing all IP pool modifications**, verify your files against the reference files:
+
 - `data/ip_pools.nac.yaml` should match: `reference_configs/final_config/ip_pools.nac.yaml`
 - `data/sites.nac.yaml` should match: `reference_configs/final_config/sites.nac.yaml`
 
-Verify your changes reviewing the files or running the commandd below in terminal from nac-catalystcenter-simple-example folder:
+Verify your changes reviewing the files or running the commandd below in terminal from `nac-catalystcenter-simple-example` folder:
 
 Verify your changes to `ip_pools.nac.yaml`:
 ```bash
