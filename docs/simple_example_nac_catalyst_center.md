@@ -370,12 +370,14 @@ catalyst_center:
 Verify your changes using a diff tool or by reviewing the file manually.
 
 **What We're Adding**:
+
 - **3 Area Levels**: Europe → Italy → Rome hierarchy
 - **1 Building**: Rome Office with coordinates and address
 - **1 Floor**: Ground floor
 - **Total**: 5 new resources with just 18 lines of YAML
 
 **Key Points**:
+
 - Each area references its parent using slash-separated paths
 - The building references the complete hierarchy path
 - No IP pool reservation yet - we'll add that in the next step
@@ -396,6 +398,7 @@ terraform apply
 **Expected Result**: ✅ 5 new resources added (3 areas, 1 building, 1 floor)
 
 **Verify in Catalyst Center**: 
+
 - Refresh your browser page in the Catalyst Center GUI
 - Navigate to **Design > Network Hierarchy** 
 - Expand **Global** to verify the new **Europe > Italy > Rome** hierarchy appears
@@ -481,11 +484,13 @@ ip_pools_reservations:
 Review your changes manually to ensure all modifications were applied correctly.
 
 **What We're Adding**:
+
 - **1 Global IP Pool**: EU_CORP (10.205.0.0/16) for all European sites
 - **1 IP Pool Reservation**: ROM_CORP (10.205.1.0/24) carved from the global pool
 - **Total**: 2 new resources
 
 **Key Points**:
+
 - The global pool can support multiple European sites with /24 subnets
 - The reservation is defined once in `ip_pools.nac.yaml`
 - The building simply references the reservation by name
