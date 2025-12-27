@@ -134,6 +134,7 @@ terraform apply
 ```
 
 **Expected Result**: ✅ Success on first apply - all 50+ resources created
+
 - 3 Areas (Global, Poland, Krakow)
 - 1 Building (Bld A)
 - 2 Floors (Floor 1, Floor 2)
@@ -266,6 +267,7 @@ Command execution will take around 2 to 3 minutes.
 **Expected Result**: ✅ Device state updated - BR10 will be provisioned
 
 **Verify in Catalyst Center**:
+
 - Refresh your browser page in the Catalyst Center GUI
 - Navigate to **Provision > Inventory** and set focus to **Provision**
 - Verify that BR10 device shows as provisioned
@@ -352,6 +354,7 @@ Command execution will take around 4 to 6 minutes (both devices are provisioned 
 **Expected Result**: ✅ Device states updated - EDGE01 and EDGE02 will be provisioned
 
 **Verify in Catalyst Center**:
+
 - Refresh your browser page in the Catalyst Center GUI
 - Navigate to **Provision > Inventory** and set focus to **Provision**
 - Verify that both EDGE01 and EDGE02 devices show as provisioned
