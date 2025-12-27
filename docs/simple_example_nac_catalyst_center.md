@@ -365,9 +365,14 @@ catalyst_center:
   parent_name: Global/Europe/Italy/Rome/Rome Office
 ```
 
-**After completing these modifications**, your `data/sites.nac.yaml` file should include the Rome office hierarchy.
 
-Verify your changes using a diff tool or by reviewing the file manually.
+**After completing these modifications**, your `data/sites.nac.yaml` file should look like the reference file in the nac-catalystcenter-simple-example/reference_configs/final_config folder with the exception of the ip_pools_reservations that we will add in the next step
+
+Verify your changes reviewing the file or running the command below in terminal from nac-catalystcenter-simple-example folder:
+
+```bash
+diff -c data/sites.nac.yaml reference_configs/final_config/sites.nac.yaml
+```
 
 **What We're Adding**:
 
@@ -479,9 +484,21 @@ ip_pools_reservations:
     - ROM_CORP
 ```
 
-**After completing all IP pool modifications**, verify your files contain all the expected resources.
+**After completing all IP pool modifications**, verify your files against the reference files:
+- `data/ip_pools.nac.yaml` should match: `reference_configs/final_config/ip_pools.nac.yaml`
+- `data/sites.nac.yaml` should match: `reference_configs/final_config/sites.nac.yaml`
 
-Review your changes manually to ensure all modifications were applied correctly.
+Verify your changes reviewing the files or running the commandd below in terminal from nac-catalystcenter-simple-example folder:
+
+Verify your changes to `ip_pools.nac.yaml`:
+```bash
+diff -c data/ip_pools.nac.yaml reference_configs/final_config/ip_pools.nac.yaml
+```
+
+Verify your changes to `sites.nac.yaml`:
+```bash
+diff -c data/sites.nac.yaml reference_configs/final_config/sites.nac.yaml
+```
 
 **What We're Adding**:
 

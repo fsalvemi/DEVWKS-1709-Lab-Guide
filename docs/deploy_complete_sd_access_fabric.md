@@ -9,6 +9,7 @@ If not already done, follow the [Lab Access Guide](./lab_access.md) to access th
 ## 🎯 What This Example Does
 
 Deploys a complete SD-Access fabric infrastructure to Catalyst Center:
+
 - **3 Areas**: Global, Poland, Krakow
 - **1 Building**: Bld A in Krakow
 - **2 Floors**: Floor 1 and Floor 2 in Bld A
@@ -60,6 +61,7 @@ This separation means you maintain only your network's desired state (YAML data)
 ### 1. main.tf file
 
 The `main.tf` file is the entry point for your Terraform deployment. It defines:
+
 - **Provider Configuration**: Which Terraform provider to use (Catalyst Center)
 - **Authentication**: How to connect to your Catalyst Center instance (URL, credentials)
 - **NAC Module**: References the Network-as-Code module for simplified configuration
@@ -101,7 +103,6 @@ Contains network profiles used for device provisioning and configuration templat
 #### 2.6 Configuration Templates (`templates.nac.yaml`)
 
 References configuration templates (like ACL_Block.j2) that can be applied to devices for consistent policy enforcement.
-
 
 ### 3. Verify Initial Catalyst Center Configuration
 
@@ -208,7 +209,7 @@ After the successful Terraform deployment, verify that the SD-Access fabric infr
 
 This verification step ensures your Terraform deployment successfully created all the expected SD-Access fabric resources.
 
-4. **Provision the Border Device**
+### 5.  Provision the Border Device
 
 To provision border device open devices.nac.yaml file in data/ folder and change state attribute from INIT to PROVISION on BR10.cisco.eu device.
 
@@ -275,7 +276,7 @@ Command execution will take around 2 to 3 minutes.
 
 ![BR10 Verify Provisioning](images/deploy_complete_sd_access_fabric/BR10_verify_provisioning.gif)
 
-5. **Provision the Edge Devices**
+### 6. Provision the Edge Devices
 
 To provision the edge devices, open the devices.nac.yaml file in the data/ folder and change the state attribute from INIT to PROVISION on both EDGE01.cisco.eu and EDGE02.cisco.eu devices.
 
